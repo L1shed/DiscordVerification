@@ -1,6 +1,6 @@
 package me.lished.discordverification.commands
 
-import me.lished.discordverification.datas.VerificationData
+import me.lished.discordverification.managers.VerificationData
 import me.lished.discordverification.managers.VerificationManager
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.event.ClickEvent

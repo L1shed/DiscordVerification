@@ -1,7 +1,9 @@
 package me.lished.discordverification.managers
-
-import me.lished.discordverification.datas.VerificationData
 import org.bukkit.entity.Player
+import java.util.*
+import kotlin.collections.HashMap
+
+data class VerificationData(val code: String, val expiration: Date)
 
 object VerificationManager {
 
