@@ -14,15 +14,21 @@ import java.util.*
 class VerifyCommand : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         val player = sender as Player
-        val code = VerificationManager.generateVerificationCode()
-        val expirationDate = Date(System.currentTimeMillis() + 300000)
-        val verificationData = VerificationData(player, code, expirationDate)
-        VerificationManager.verificationCodes.add(verificationData)
 
-        sender.sendMessage(Component.text("Your verification code is: $code")
+        if (VerificationManager.verificationCodes.containsKey(player)) {
+            player.sendMessage("already code")
+            return false
+        }
+
+        val code = VerificationManager.generateVerificationCode()
+        val expirationDate = Date(System.currentTimeMillis() + 120000) // 2 minutes
+        val verificationData = VerificationData(code, expirationDate)
+        VerificationManager.verificationCodes[player] = verificationData
+
+        player.sendMessage(Component.text("Your verification code is: $code")
             .clickEvent(ClickEvent.copyToClipboard(code))
             .hoverEvent(HoverEvent.showText(Component.text("Click to Copy"))))
 
-        return false
+        return true
     }
 }
