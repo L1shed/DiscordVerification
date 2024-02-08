@@ -127,5 +127,10 @@
           <version>${kotlin.version}</version>
           <scope>test</scope>
       </dependency>
+      <dependency>
+          <groupId>me.jakejmattson</groupId>
+          <artifactId>DiscordKt</artifactId>
+          <version>0.24.0</version>
+      </dependency>
   </dependencies>
 </project>
