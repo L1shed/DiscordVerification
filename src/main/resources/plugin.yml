@@ -1,0 +1,4 @@
+name: DiscordVerification
+version: '${project.version}'
+main: me.lished.discordverification.DiscordVerification
+api-version: '1.20'
