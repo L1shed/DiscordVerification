@@ -2,3 +2,7 @@ name: DiscordVerification
 version: '${project.version}'
 main: me.lished.discordverification.DiscordVerification
 api-version: '1.20'
+libraries:
+  - org.jetbrains.kotlin:kotlin-maven-plugin:1.9.22
+commands:
+  verify:
