@@ -13,4 +13,13 @@ object VerificationManager {
     fun generateVerificationCode(): Int {
         return (100000..999999).random()
     }
+
+    fun getPlayerByCode(code: Int): Player? {
+        for ((player, playerCode) in verificationCode) {
+            if (playerCode == code) {
+                return player
+            }
+        }
+        return null // If no player is found with the given code
+    }
 }

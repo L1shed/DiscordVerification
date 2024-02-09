@@ -17,11 +17,11 @@ class DiscordVerification : JavaPlugin() {
         }
     }
 
-    fun demo() = commands("testouille") {
-        slash("Verify", "A Verify command.") {
+    fun verify() = commands("security") {
+        slash("Verify", "Verify with this command.") {
             execute(IntegerArg("Code")) {
-                val code = args.toString()
-                VerificationManager.verificationCode
+                val player = VerificationManager.getPlayerByCode(args.first)
+                player?.sendMessage("You got verified: $author")
                 respond("Verified")
             }
         }
