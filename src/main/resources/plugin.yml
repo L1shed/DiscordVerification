@@ -4,5 +4,6 @@ main: me.lished.discordverification.DiscordVerification
 api-version: '1.20'
 libraries:
   - org.jetbrains.kotlin:kotlin-maven-plugin:1.9.22
+  - me.jakejmattson:DiscordKt:0.24.0
 commands:
   verify:
