@@ -1,4 +1,4 @@
 token: ""
 force-verifying: false
 # In seconds. Exemple: 120 seconds = 2 minutes. 0 = no expiration
-expiration-time: 120
+expiration-time: 0
