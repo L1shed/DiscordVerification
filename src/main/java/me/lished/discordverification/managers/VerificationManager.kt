@@ -7,7 +7,7 @@ import kotlin.collections.HashMap
 
 object VerificationManager {
 
-    val verificationCodes: MutableMap<Player, String> = HashMap()
+    val verificationCode: MutableMap<Player, String> = HashMap()
     val expiration: MutableMap<String, Date> = HashMap()
 
     fun generateVerificationCode(): String {
