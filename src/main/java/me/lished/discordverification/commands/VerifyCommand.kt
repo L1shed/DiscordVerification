@@ -13,16 +13,15 @@ import java.util.*
 class VerifyCommand : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>?): Boolean {
         val player = sender as Player
-        val code = VerificationManager.generateVerificationCode()
-        val expirationDate = Date(System.currentTimeMillis() + 120 * 1000)
+        var code = VerificationManager.generateVerificationCode()
+//        val expirationDate = Date(System.currentTimeMillis() + 120 * 1000)
 
         if (VerificationManager.verificationCode.containsKey(player)) {
-            VerificationManager.verificationCode.containsKey(player)
-            return false
+            code = VerificationManager.verificationCode[player].toString()
         }
 
         VerificationManager.verificationCode[player] = code
-        VerificationManager.expiration[code] = expirationDate
+//        VerificationManager.expiration[code] = expirationDate
 
         player.sendMessage(Component.text("Your verification code is: $code")
             .clickEvent(ClickEvent.copyToClipboard(code))

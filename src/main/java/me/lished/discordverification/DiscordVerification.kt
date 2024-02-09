@@ -21,7 +21,7 @@ class DiscordVerification : JavaPlugin() {
         slash("Verify", "A Verify command.") {
             execute(IntegerArg("Code")) {
                 val code = args.toString()
-
+                VerificationManager.verificationCode
                 respond("Verified")
             }
         }
