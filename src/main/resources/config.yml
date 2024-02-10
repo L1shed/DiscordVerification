@@ -1,6 +1,8 @@
 # The token of your Discord bot. Can be found in your developer portal
-token: "MTAwNTg0NzQ2MDI1OTgyNzg3gMg.GLXTlT.cUaU6rNEjSDnm1C-_SF9ZahW-lXyC7YgKlA1Fs"
+token: ""
 # If enabled, players will not be able to connect if they are not verified. They will be kicked with the code to verify in the kick message.
 force-verifying: false
 # In seconds. Example: 120 seconds = 2 minutes. 0 = no expiration
 expiration-time: 0
+change-nickname: false
+give-role: 0
