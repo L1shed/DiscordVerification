@@ -12,9 +12,9 @@ class DiscordVerification : JavaPlugin() {
         getCommand("verify")?.setExecutor(VerifyCommand())
         saveConfig() // or saveDefaultConfig() i'm brainfucking brainfucked
 
-        bot(config.getString("token")) {
-            prefix { "+" }
-        }
+//        bot(config.getString("token")) {
+//            prefix { "+" }
+//        }
     }
 
 //    fun verify() = commands("security") {
