@@ -128,9 +128,9 @@
           <scope>test</scope>
       </dependency>
       <dependency>
-          <groupId>me.jakejmattson</groupId>
-          <artifactId>DiscordKt</artifactId>
-          <version>0.24.0</version>
+          <groupId>net.dv8tion</groupId>
+          <artifactId>JDA</artifactId>
+          <version>5.0.0-beta.20</version>
       </dependency>
   </dependencies>
 </project>

@@ -1,34 +1,16 @@
 package me.lished.discordverification
 
-import me.jakejmattson.discordkt.arguments.IntegerArg
-import me.jakejmattson.discordkt.commands.commands
-import me.jakejmattson.discordkt.dsl.bot
 import me.lished.discordverification.commands.VerifyCommand
-import me.lished.discordverification.managers.DiscordBotManager
-import me.lished.discordverification.managers.VerificationManager
+import net.dv8tion.jda.api.JDABuilder
 import org.bukkit.plugin.java.JavaPlugin
 
 class DiscordVerification : JavaPlugin() {
     override fun onEnable() {
         getCommand("verify")?.setExecutor(VerifyCommand())
-        saveConfig() // or saveDefaultConfig() i'm brainfucking brainfucked
+        saveConfig()
 
-        DiscordBotManager.startBot(config.getString("token"))
-
-//        bot(config.getString("token")) {
-//            prefix { "+" }
-//        }
+        val jda = JDABuilder.createDefault(config.getString("token")).build()
     }
-
-//    fun verify() = commands("security") {
-//        slash("Verify", "Verify with this command.") {
-//            execute(IntegerArg("Code")) {
-//                val player = VerificationManager.getPlayerByCode(args.first)
-//                player?.sendMessage("You got verified: $author")
-//                respond("Verified")
-//            }
-//        }
-//    }
 }
 
 
