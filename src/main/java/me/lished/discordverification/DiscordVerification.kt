@@ -36,7 +36,6 @@ class DiscordVerification : JavaPlugin() {
             ).build()
 
         client?.on(object : ReactiveEventAdapter() {
-
             override fun onChatInputInteraction(event: ChatInputInteractionEvent): Publisher<*> {
                 if (event.commandName == "random") {
                     return event.reply("caca")
