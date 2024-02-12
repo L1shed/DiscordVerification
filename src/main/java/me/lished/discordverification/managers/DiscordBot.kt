@@ -28,13 +28,7 @@ object DiscordBot {
         client!!.on(ChatInputInteractionEvent::class.java)
             .subscribe { event ->
                 if (event.commandName == "verify") {
-                    if (VerificationManager.getPlayerByCode(event.getOption("code").toString().toInt()) != null) {
-                        event.reply("caca")
-                        return@subscribe
-                    }
-                    event.reply("f")
-                        .withEphemeral(true)
-                        .subscribe()
+                    event.deferReply().then(VerificationManager.checkCode(event))
                 }
             }
     }

@@ -26,9 +26,10 @@ object VerificationManager {
         return null
     }
 
-    fun checkCode(code: Int, event: ChatInputInteractionEvent): Mono<Message> {
-        getPlayerByCode(code)
-        return event.createFollowup("This took awhile!")
+    fun checkCode(event: ChatInputInteractionEvent): Mono<Message> {
+        val player = getPlayerByCode(event.getOption("code").toString().toInt())
+        if (player != null) return event.createFollowup("verified").withEphemeral(true)
+        return event.createFollowup("null").withEphemeral(true)
     }
 
 }
