@@ -11,7 +11,6 @@ class DiscordVerification : JavaPlugin() {
         saveConfig()
 
         DiscordBot.startBot(config.getString("token")!!)
-
     }
 }
 

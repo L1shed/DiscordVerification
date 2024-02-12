@@ -20,6 +20,6 @@ object VerificationManager {
                 return player
             }
         }
-        return null // If no player is found with the given code
+        return null
     }
 }

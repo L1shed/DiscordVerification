@@ -7,6 +7,8 @@ import discord4j.core.`object`.command.ApplicationCommandOption
 import discord4j.discordjson.json.ApplicationCommandOptionData
 import discord4j.discordjson.json.ApplicationCommandRequest
 
+
+
 object DiscordBot {
     fun startBot(token: String) {
         val client: GatewayDiscordClient? = DiscordClient.create(token)
@@ -28,9 +30,16 @@ object DiscordBot {
         client!!.on(ChatInputInteractionEvent::class.java)
             .subscribe { event ->
                 if (event.commandName == "verify") {
-                    event.reply("d")
-                        .withEphemeral(true)
-                        .subscribe()
+                    val player = VerificationManager.getPlayerByCode(event.getOption("code").toString().toInt())
+                    if (player != null) {
+                        event.reply("verified")
+                            .withEphemeral(true)
+                            .subscribe()
+                    } else {
+                        event.reply("not")
+                            .withEphemeral(true)
+                            .subscribe()
+                    }
                 }
             }
     }
