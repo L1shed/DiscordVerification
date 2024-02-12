@@ -7,8 +7,6 @@ import discord4j.core.`object`.command.ApplicationCommandOption
 import discord4j.discordjson.json.ApplicationCommandOptionData
 import discord4j.discordjson.json.ApplicationCommandRequest
 
-
-
 object DiscordBot {
     fun startBot(token: String) {
         val client: GatewayDiscordClient? = DiscordClient.create(token)
