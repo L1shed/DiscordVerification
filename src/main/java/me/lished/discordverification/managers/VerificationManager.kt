@@ -1,7 +1,10 @@
 package me.lished.discordverification.managers
+import discord4j.core.event.domain.interaction.ChatInputInteractionEvent
+import discord4j.core.`object`.entity.Message
 import org.bukkit.entity.Player
+import reactor.core.publisher.Mono
 import java.util.*
-import kotlin.collections.HashMap
+
 
 //data class VerificationData(val code: String, val expiration: Date)
 
@@ -22,4 +25,10 @@ object VerificationManager {
         }
         return null
     }
+
+    fun checkCode(code: Int, event: ChatInputInteractionEvent): Mono<Message> {
+        getPlayerByCode(code)
+        return event.createFollowup("This took awhile!")
+    }
+
 }
