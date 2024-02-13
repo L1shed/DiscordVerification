@@ -33,7 +33,7 @@ object DiscordBot {
                         .map { it.asLong().toInt() }
                         .orElse(1))
                     if (player != null) event.reply("verified").withEphemeral(true).subscribe()
-                    event.reply("goblet").withEphemeral(true).subscribe()
+                    event.reply("growl").withEphemeral(true).subscribe()
                 }
             }
     }
