@@ -33,7 +33,7 @@ object DiscordBot {
                         .map { it.asLong().toInt() }
                         .orElse(1))
                     if (player != null) event.reply("You got successfully verified").withEphemeral(true).subscribe()
-                    event.reply("Y").withEphemeral(true).subscribe()
+                    event.reply("Your code is incorrect").withEphemeral(true).subscribe()
                 }
             }
     }
