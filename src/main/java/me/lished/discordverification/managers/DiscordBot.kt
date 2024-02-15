@@ -32,8 +32,8 @@ object DiscordBot {
                     val player = VerificationManager.getPlayerByCode(event.getOption("code").flatMap { it.value }
                         .map { it.asLong().toInt() }
                         .orElse(1))
-                    if (player != null) event.reply("verified").withEphemeral(true).subscribe()
-                    event.reply("pulled").withEphemeral(true).subscribe()
+                    if (player != null) event.reply("You got successfully verified").withEphemeral(true).subscribe()
+                    event.reply("Y").withEphemeral(true).subscribe()
                 }
             }
     }
